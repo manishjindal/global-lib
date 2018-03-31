@@ -1,5 +1,5 @@
 package com.mjindal.devops
-import com.cloudbees.groovy.cps.NonCPS
+import NonCPS
 
 def call(String username){
     return getUsername(username);
