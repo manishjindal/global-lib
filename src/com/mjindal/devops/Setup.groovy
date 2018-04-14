@@ -11,7 +11,7 @@ class Setup implements Serializable {
 
     def loginToDockerHub(){
         steps.withCredentials([steps.usernameColonPassword(credentialsId: '8d3f3ee8-05dd-49f3-9cdd-f21d3119784d', variable: 'TOKEN')]) {
-            println "Credential " + TOKEN;
+            println "Credential " + steps.TOKEN;
         }
     }
 
