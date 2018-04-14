@@ -29,9 +29,9 @@ class Setup implements Serializable {
             println "Line = " + lines[i];
             def clusterDetails = lines[i].toString().split(",");
             print "Cluster Detail = " + clusterDetails
-            clusterMap = new HashMap<String, String>();
+            def clusterMap = new HashMap<String, String>();
             for (int j = 0; j < clusterDetails.size(); j++) {
-                clusterElements = (clusterDetails[j]).toString().split(":");
+                def clusterElements = (clusterDetails[j]).toString().split(":");
                 clusterMap.put(clusterElements[0], clusterElements[1]);
             }
             cluster.add(clusterMap);
