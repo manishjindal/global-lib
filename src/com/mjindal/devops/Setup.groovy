@@ -5,6 +5,7 @@ package com.mjindal.devops
 class Setup implements Serializable {
 
     def steps;
+    def static appVersion;
     Setup(steps){
         this.steps = steps;
     }
