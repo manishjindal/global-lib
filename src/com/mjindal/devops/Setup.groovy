@@ -15,12 +15,20 @@ class Setup implements Serializable {
         }
     }
 
+    def getAppVersion(def versionFileContent){
+        appVersion =  versionFileContent.split("\n");
+        println "Version = " + appVersion[0];
+        return appVersion[0];
+    }
+    
+    def ArrayList<Map<String, String>> readClusterInfo(def clusterInfoContent, def versionFileContent) {
 
-    def ArrayList<Map<String, String>> readClusterInfo(def clusterInfoContent) {
-
-        println clusterInfoContent
+        println "Cluster Info = " + clusterInfoContent
+        println "Version File Content =  " + versionFileContent
         def cluster = new ArrayList<Map<String, String>>();
-
+    
+        print "----1--------------" + getAppVersion(versionFileContent);
+        
         def lines= clusterInfoContent.split("\n");
 
         //print lines.toString();
