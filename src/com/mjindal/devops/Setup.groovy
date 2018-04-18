@@ -15,7 +15,7 @@ class Setup implements Serializable {
         }
     }
 
-    def getAppVersion(def versionFileContent){
+    static String getAppVersion(def versionFileContent){
         appVersion =  versionFileContent.split("\n");
         println "Version = " + appVersion[0];
         return appVersion[0];
@@ -27,7 +27,7 @@ class Setup implements Serializable {
         println "Version File Content =  " + versionFileContent
         def cluster = new ArrayList<Map<String, String>>();
     
-        print "----1--------------" + getAppVersion(versionFileContent);
+        print "----1--------------" + Setup.getAppVersion(versionFileContent);
         
         def lines= clusterInfoContent.split("\n");
 
