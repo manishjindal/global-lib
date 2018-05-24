@@ -13,7 +13,12 @@ class Setup implements Serializable {
     def loginToDockerHub(){
         
         steps.sh '''docker version
-                    echo $?'''
+                    if [[ $? != 0  ]]; then
+		                echo "Tiller Pod Not Found, Sleep for 10 sec and check aga"
+		            fi
+	                else
+		                echo "Tiller is Deployed successfully!"
+                	fi'''
         steps.withCredentials([steps.usernameColonPassword(credentialsId: '8d3f3ee8-05dd-49f3-9cdd-f21d3119784d', variable: 'TOKEN')]) {
             println "Credential " + steps.TOKEN;
         }
